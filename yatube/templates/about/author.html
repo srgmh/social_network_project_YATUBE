@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Об авторе проекта{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h1>Привет, я автор этого проекта</h1>
+  <div class="row">    
+  <p>
+      <aside class="col-12 col-md-3">
+        {% load static %}
+        <img src="{% static 'img/cat_with_a_cup.jpg' %}" width="200" height="294">
+      </aside>
+      <article class="col-12 col-md-9">
+        <ul>
+          <h5>
+            <p>
+            <li>
+              email: serg.mankevi@yandex.ru
+            </li>
+            <p>
+            <li>
+              telergam: @srgmh
+            </li>     
+          </h5>     
+        </ul>
+      </article>
+    </p>
+  </div>
+</div>
+{% endblock %} 
