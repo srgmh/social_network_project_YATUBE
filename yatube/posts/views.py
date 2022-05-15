@@ -7,7 +7,7 @@ from .utils import get_paginator
 
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.select_related('author', 'group')
     template = 'posts/index.html'
     page_obj = get_paginator(posts, request)
     context = {

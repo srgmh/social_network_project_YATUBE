@@ -9,10 +9,12 @@ class PostForm(forms.ModelForm):
         fields = ["text", "group", 'image']
         help_texts = {
             "text": "Прописываем текст поста",
-            "group": "Группа для опубликования"}
+            "group": "Группа для опубликования",
+            "image": "Наиболее подходящее изображение"}
         labels = {
             "text": "Текст поста",
-            "group": "Группа"}
+            "group": "Группа",
+            "image": "Картинка"}
 
 
 class CommentForm(forms.ModelForm):
