@@ -31,6 +31,7 @@ def profile(request, username):
     author = get_object_or_404(User, username=username)
     template = 'posts/profile.html'
     page_obj = get_paginator(author.posts.all(), request)
+    posts_amount = author.posts.count()
     following = (
         request.user.is_authenticated
         and Follow.objects.filter(
@@ -39,6 +40,7 @@ def profile(request, username):
         'author': author,
         'following': following,
         'page_obj': page_obj,
+        'posts_amount': posts_amount
     }
     return render(request, template, context)
 
@@ -48,7 +50,7 @@ def post_detail(request, post_id):
     author_posts = post.author.posts.count()
     num_author_posts = Post.objects.filter(author=author_posts).count()
     comment_form = CommentForm(request.POST or None)
-    comments = Comment.objects.filter(post=post)
+    comments = Comment.objects.select_related('post', 'author')
     context = {
         'post': post,
         'author_posts': author_posts,

@@ -4,7 +4,6 @@ from .models import Comment, Group, Post
 
 
 class PostAdmin(admin.ModelAdmin):
-
     list_display = ('pk', 'text', 'pub_date', 'author', 'group',)
     list_editable = ('group',)
     search_fields = ('text',)
@@ -15,7 +14,7 @@ class PostAdmin(admin.ModelAdmin):
 class GroupAdmin(admin.ModelAdmin):
     list_display = ("pk", "title", "slug", "description")
     search_fields = ("title",)
-    empty_value_display = "-пусто-"
+    prepopulated_fields = {'slug': ('title',)}
 
 
 class CommentAdmin(admin.ModelAdmin):
