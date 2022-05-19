@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.staticfiles',
     'posts.apps.PostsConfig',   # Добавленная запись  posts
     'users.apps.UsersConfig',   # Добавленная запись  users
     'core.apps.CoreConfig',     # Добавленная запись  core
@@ -46,8 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'sorl.thumbnail',   # Добавил под картинки в 6 спринте
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
+
+INTERNAL_IPS = [
+    '127.0.0.1',
 ]
 
 ROOT_URLCONF = 'yatube.urls'
@@ -75,7 +81,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # Добавлен контекст-процессор, теперь год автоматически пропис.
                 'core.context_processors.year.year',
             ],
         },
