@@ -2,28 +2,59 @@
 {% block title %}Об авторе проекта{% endblock %}
 {% block content %}
 <div class="container py-5">
-  <h1>Привет, я автор этого проекта</h1>
-  <div class="row">    
-  <p>
-      <aside class="col-12 col-md-3">
-        {% load static %}
-        <img src="{% static 'img/cat_with_a_cup.jpg' %}" width="200" height="294">
-      </aside>
-      <article class="col-12 col-md-9">
-        <ul>
-          <h5>
-            <p>
-            <li>
-              email: serg.mankevi@yandex.ru
-            </li>
-            <p>
-            <li>
-              telergam: @srgmh
-            </li>     
-          </h5>     
-        </ul>
-      </article>
-    </p>
-  </div>
-</div>
-{% endblock %} 
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="row text-center">
+				<div style="width: 18rem;">
+					<div class="page-header">
+						<h1>Sergey Mankevich</h1>
+					</div>
+					{% load static %}
+					<img src="{% static 'img/cat.jpeg' %}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Junior Python Developer</h5>
+						<p class="card-text">
+							<i>Belarus, Minsk</i>
+						</p>
+										<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+						<a href="https://t.me/srgmh">
+						<button type="button" class="btn btn-info">Telegram</button>
+						</a>
+						<a href="https://github.com/srgmh">
+						<button type="button" class="btn btn-dark">GitHub</button>
+						</a>
+				</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<div class="jumbotron">
+				<div class="alert alert-primary" role="alert">
+					<h2> Skills and Proficiency:</h2>
+					<hr>
+					<li>Python</li>
+					<li>Django</li>
+					<li>SQL</li>
+					<li>HTML5, CSS</li>
+					<li>Git</li>
+					<li>VSCode, Pycharm</li>
+					<li>Autocad</li>
+				</div>
+				<div class="alert alert-primary" role="alert">
+					<h3>Education</h3>
+					<hr>
+					<p>
+						Belarus <br>
+						Brest State Technical University (Сivil engineer), 2014
+					</p>
+				</div>
+				<div class="alert alert-primary" role="alert">
+				<b><h3>Courses</h3></b>
+					<hr>
+				Yandex Praktikum 2022
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
