@@ -23,14 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wq4d)xq$#53w31bs%5(_2hci88$5=0r6^dc2-37f48!clihseq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '[::1]',
     'testserver',
+    'srgmh.pythonanywhere.com',
+    'www.srgmh.pythonanywhere.com',
 ]
 
 
